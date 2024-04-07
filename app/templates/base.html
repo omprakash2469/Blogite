@@ -1,0 +1,28 @@
+{% if g.useLayout %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blogite Application</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
+    <script src="{{url_for('static', filename='js/html.min.js')}}"></script>
+</head>
+
+<body>
+    <!-- Navigation bar -->
+    {% include "./components/navbar.html" %}
+
+    {% endif %}
+
+    <!-- Content body -->
+    <main id="main">
+        {% block content %} {% endblock %}
+    </main>
+
+    {% if g.useLayout %}
+</body>
+
+</html>
+{% endif %}

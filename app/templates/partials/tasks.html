@@ -1,0 +1,16 @@
+<ul class="space-y-2">
+    {% for task in tasks %}
+    <div class="flex justify-between">
+        <label for="{{task.id}}" class="block cursor-pointer select-none has-[:checked]:text-green-600">
+            <input type="checkbox" name="{{task.id}}" id="{{task.id}}">
+            <span>{{task.task}}</span>
+        </label>
+        <div class="flex gap-x-2">
+            <button hx-put="/tasks" name="id" value="{{task.id}}" hx-trigger="click" hx-target="#add-task-form"
+                class="text-xs bg-blue-400 px-2 rounded-md text-white">Edit</button>
+            <button hx-delete="/tasks" name="id" value="{{task.id}}" hx-trigger="click" hx-target="#all-tasks"
+                class="text-xs bg-red-400 px-2 rounded-md text-white">Delete</button>
+        </div>
+    </div>
+    {% endfor %}
+</ul>
