@@ -1,1 +1,1 @@
-from wsgi import app
+from index import app
