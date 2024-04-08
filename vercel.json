@@ -5,12 +5,6 @@
             "runtime": "python3.11"
         }
     },
-    "builds": [
-    {
-        "src": "./wsgi.py",
-        "use": "@vercel/python"
-    }
-    ],
     "routes": [
         {
             "src": "/(.*)",
